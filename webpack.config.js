@@ -30,7 +30,8 @@ Encore
 
     // will require an extra script tag for runtime.js
     // but, you probably want this, unless you're building a single-page app
-    .enableSingleRuntimeChunk()
+    //.enableSingleRuntimeChunk()
+    .disableSingleRuntimeChunk()
 
     /*
      * FEATURE CONFIG
@@ -47,6 +48,8 @@ Encore
 
     .configureBabel((config) => {
         config.plugins.push('@babel/plugin-proposal-class-properties');
+
+        //config.presets.push("@babel/preset-react");
     })
 
     // enables @babel/preset-env polyfills
@@ -62,7 +65,7 @@ Encore
     //.enableTypeScriptLoader()
 
     // uncomment if you use React
-    //.enableReactPreset()
+    .enableReactPreset()
 
     // uncomment to get integrity="..." attributes on your script & link tags
     // requires WebpackEncoreBundle 1.4 or higher
