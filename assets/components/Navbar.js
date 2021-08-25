@@ -5,11 +5,11 @@ class Navbar extends Component {
     render() {
         return (
            <nav className="navbar">
-               <h1><a href="/">SmolCRM</a></h1>
+               <h1><Link to="/">SmolCRM</Link></h1>
                <div className="links">
-                   <a href="/administration">Administration</a>
-                   <a href="/notes">Notes</a>
-                   <a href="/user">User page</a>
+                   <Link to="/administration">Administration</Link>
+                   <Link to="/notes">Notes</Link>
+                   <Link to="/user">User page</Link>
                </div>
            </nav>
         )

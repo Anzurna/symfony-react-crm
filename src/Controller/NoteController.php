@@ -4,16 +4,14 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
-use Doctrine\ORM\EntityManagerInterface;
-use App\Entity\User;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
-class UserController extends AbstractController
+class NoteController extends AbstractController
 {
-    /**
-     * @Route("/api/users", name="user")
+     /**
+     * @Route("/api/notes", name="all_notes")
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
     public function getAll(): Response
@@ -21,21 +19,19 @@ class UserController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery(
             'SELECT u.id,
-                    u.login,
-                    u.email,
-                    u.firstname,
-                    u.lastname
-            FROM App\Entity\User u'
+                    u.title,
+                    u.content
+            FROM App\Entity\Note u'
         );
-        $users = $query->getArrayResult();
+        $notes = $query->getArrayResult();
 
-        $response = new JsonResponse($users);
+        $response = new JsonResponse($notes);
         $response->headers->set('Access-Control-Allow-Origin', '*');
         $response->headers->set('Content-Type', 'application/json');
         return $response;
     }
     /**
-     * @Route("/users/{id}", name="user_get")
+     * @Route("/api/notes/{id}", name="note_get_by_id")
      */
     public function new($id) {
         $user = $this->getDoctrine()
