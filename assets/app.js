@@ -16,20 +16,26 @@ import './styles/app.css';
 import Navbar from './components/Navbar';
 import UserTable from './components/UserTable';
 import NoteTable from './components/NoteTable';
+import UserCRUD from './components/UserCRUD';
+import Footer from './components/Footer';
     
 ReactDOM.render(
     <Router>
        
         <div className='app'>
-            
+        <Navbar />
             <div className="content">
-            <Navbar />
+            
                 <Switch>
                     <Route exact path="/">
                     
                     </Route>
                     <Route exact path="/administration">
-                        <UserTable />
+                        <div className="flex-row">
+                            <UserCRUD />
+                            <UserTable />  
+                        </div>
+                        <NoteTable />
                     </Route>
                     <Route exact path="/notes">
                         <NoteTable />
@@ -40,13 +46,7 @@ ReactDOM.render(
 
                 </Switch>     
             </div>
-            <footer className="footer">
-                <div class="footer-content">
-                ©2021 <i class="fas fa-bicycle"></i>
-                </div>
-
-            
-            </footer>
+            <Footer />
         </div>
     </Router>, 
     document.getElementById('root')

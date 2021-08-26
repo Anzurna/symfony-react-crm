@@ -29,9 +29,13 @@ a, a:focus, a:active {
   color:inherit;
 }
 .navbar {
+  padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
   max-width: 1000px;
+  min-width: 1000px;
+  flex-direction: row;
+  margin: 0 auto;
   
   border-bottom: 1px solid #f2f2f2;
 }
@@ -49,18 +53,30 @@ a, a:focus, a:active {
   padding: 6px;
 }
 .navbar a:hover {
-  color: #324acf;
+  color: #142aa8;
 }
+
+.active {
+  border-bottom: 2px solid #5767c0;
+}
+
+
 .content {
   flex: 1 0 auto;
-  max-width: 1000px;
+  min-width: 1000px;
   margin: 0px auto;
   padding: 20px;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  min-width: inherit;
+}
+
 .st-table {
   table-layout: fixed;
-  width: 70%;
+  /* width: 70%; */
   border-collapse: separate;
   border: 2px solid #324acf;
   border-radius: 5px;
@@ -106,3 +122,47 @@ a, a:focus, a:active {
   margin: 0 auto;
   padding: 20px
 }
+
+.user-crud {
+  padding: 20px;
+  padding-left: 0px;
+  /* max-width: 700px; */
+  min-width: 50%;
+  text-align: left;
+  
+}
+.user-crud label {
+  text-align: left;
+  display: block;
+}
+.user-crud h3 {
+  color: black;
+  margin-bottom: 20px;
+}
+.user-crud input, .user-crud textarea, .user-crud select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.user-crud button {
+  background: #324acf;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.table-wrapper {
+  padding-top: 10px;
+}
+
+.table-wrapper h3 {
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+

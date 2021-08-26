@@ -4,16 +4,23 @@ import { useEffect, useState } from "react";
 const UserTable = () => {
     const [data, setData] = useState(null);
 
-    useEffect(() => {
+    const fetchAllUsers = () => {
         fetch("http://localhost:8000/api/users")
-        .then(response => {
-            console.log(response)
-            return response.json();
+            .then(response => {
+                console.log(response)
+                return response.json();
+            })
+            .then(data => {
+                setData(data);            
         })
-        .then(data => {
-            setData(data);            
-        })
+    }
 
+    useEffect(() => {
+        fetchAllUsers();
+        
+        let timer1 = setInterval(() =>        
+            fetchAllUsers(), 5000);
+        
     }, []);
     return (  
             <div className="table-wrapper">
