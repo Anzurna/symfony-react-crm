@@ -144,16 +144,17 @@ const UserCRUD = () => {
     <div className="flex-row">
       <div className="crud">
         <h3>User</h3>
-      <Tabs>
-        <TabList>
-          <Tab>Add</Tab>
-          <Tab>Edit</Tab>
-          <Tab>Find</Tab>
-          <Tab>Delete</Tab>
+
+        <Tabs>
+          <TabList>
+            <Tab>Add</Tab>
+            <Tab>Edit</Tab>
+            <Tab>Find</Tab>
+            <Tab>Delete</Tab>
         </TabList>
 
         <TabPanel>
-            <form onSubmit={createUser}>
+          <form onSubmit={createUser}>
               <label>User Login:</label>
               <input 
                 type="text" 
@@ -192,6 +193,7 @@ const UserCRUD = () => {
               <button>Add user</button>
             </form>
           </TabPanel>
+
           <TabPanel>
             {!isUpdateFormActive && <form onSubmit={prepareForUpdate}>
               <label>User email:</label>
@@ -236,6 +238,7 @@ const UserCRUD = () => {
               <button>Edit user</button>
             </form> }
           </TabPanel>
+
           <TabPanel>
           <form onSubmit={findUser}>
               <label>User email:</label>
@@ -248,6 +251,7 @@ const UserCRUD = () => {
               <button>Find user</button>
             </form>
           </TabPanel>
+
           <TabPanel>
           <form onSubmit={deleteUser}>
               <label>User email:</label>
@@ -260,38 +264,41 @@ const UserCRUD = () => {
               <button>Delete user</button>
             </form>
           </TabPanel>
-        </Tabs>
+
+        </Tabs> 
+        
+      </div>
+
+      <div className="flex-column">
+        {findTableData && findTableData[0] && 
+          <div className="table-wrapper">
+            <h3 className="h3-table">User found</h3>
+            <table className="st-table">            
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Login</th>
+                        <th>Email</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr key={findTableData[0].id}>
+                      <td>{findTableData[0].id}</td>
+                      <td>{findTableData[0].login}</td>
+                      <td>{findTableData[0].email}</td>
+                      <td>{findTableData[0].firstname}</td>
+                      <td>{findTableData[0].lastname}</td>
+                  </tr>
+                </tbody>      
+            </table>
+        </div> }
+
+      <UserTable />
       
-      </div>
-        <div className="flex-column">
-            {findTableData && findTableData[0] && 
-              <div className="table-wrapper">
-                <h3 className="h3-table">User found</h3>
-                <table className="st-table">            
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Login</th>
-                            <th>Email</th>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                      <tr key={findTableData[0].id}>
-                          <td>{findTableData[0].id}</td>
-                          <td>{findTableData[0].login}</td>
-                          <td>{findTableData[0].email}</td>
-                          <td>{findTableData[0].firstname}</td>
-                          <td>{findTableData[0].lastname}</td>
-                      </tr>
-                    </tbody>      
-                </table>
-            </div> 
-            }
-          <UserTable />
-      </div>
     </div>
+  </div>
   );
 }
  

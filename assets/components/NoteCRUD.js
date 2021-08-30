@@ -14,7 +14,7 @@ const NoteCRUD = () => {
   const [id, setId] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  
+
 
   const [findTableData, setFindTableData] = useState(null);
 
@@ -40,7 +40,7 @@ const NoteCRUD = () => {
       title: title,
       content: content,
     }
-    
+
     makeRequest(`${url}create`, data, "POST")
     .then((response) => {
       console.log(response.status);
@@ -57,7 +57,7 @@ const NoteCRUD = () => {
     let data = {
       id: id
     }
-    
+
     get(`${url}${data.id}`)
     .then((response) => {
       console.log(response.status);
@@ -68,7 +68,7 @@ const NoteCRUD = () => {
     })
     .then((responseData) => {
       setFindTableData(responseData);
-    });   
+    });
   }
 
   const deleteNote = (e) => {
@@ -77,7 +77,7 @@ const NoteCRUD = () => {
     let data = {
         id: id
     }
-    
+
     makeRequest(`${url}delete`, data, "DELETE")
     .then((response) => {
       console.log(response.status);
@@ -113,7 +113,7 @@ const NoteCRUD = () => {
         title: title,
         content: content
     }
-    
+
     makeRequest(`${url}update`, data, "PUT")
     .then((response) => {
       console.log(response.status);
@@ -128,115 +128,119 @@ const NoteCRUD = () => {
     <div className="flex-row">
       <div className="crud">
         <h3>Note</h3>
-      <Tabs>
-        <TabList>
-          <Tab>Add</Tab>
-          <Tab>Edit</Tab>
-          <Tab>Find</Tab>
-          <Tab>Delete</Tab>
-        </TabList>
+        <Tabs>
+          <TabList>
+            <Tab>Add</Tab>
+            <Tab>Edit</Tab>
+            <Tab>Find</Tab>
+            <Tab>Delete</Tab>
+          </TabList>
 
-        <TabPanel>
+          <TabPanel>
             <form onSubmit={create}>
               <label>Note title:</label>
-              <input 
-                type="text" 
-                required 
+              <input
+                type="text"
+                required
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-              /> 
+              />
               <label>Note content:</label>
-              <textarea 
-                required 
+              <textarea
+                required
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-              />    
+              />
               <button>Add note</button>
             </form>
           </TabPanel>
+
           <TabPanel>
             {!isUpdateFormActive && <form onSubmit={prepareForUpdate}>
               <label>Note Id:</label>
-              <input 
-                type="text" 
-                required 
+              <input
+                type="text"
+                required
                 value={id}
                 onChange={(e) => setId(e.target.value)}
-              />       
+              />
               <button>Find</button>
             </form> }
 
             {isUpdateFormActive && <form onSubmit={update}>
               <label>New note title:</label>
-              <input 
-                type="text" 
-                required 
+              <input
+                type="text"
+                required
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-              /> 
+              />
               <label>New note content:</label>
-              <textarea 
-                required 
+              <textarea
+                required
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-              />    
+              />
               <button>Edit note</button>
             </form> }
           </TabPanel>
+
           <TabPanel>
-            <form onSubmit={find}> 
+            <form onSubmit={find}>
                 <label>Note Id:</label>
-                <input 
-                    type="text" 
-                    required 
+                <input
+                    type="text"
+                    required
                     value={id}
                     onChange={(e) => setId(e.target.value)}
-                />       
+                />
                 <button>Find</button>
             </form>
           </TabPanel>
+
           <TabPanel>
             <form onSubmit={deleteNote}>
                 <label>Note Id:</label>
-                <input 
-                    type="text" 
-                    required 
+                <input
+                    type="text"
+                    required
                     value={id}
                     onChange={(e) => setId(e.target.value)}
-                />       
+                />
                 <button>Delete</button>
             </form>
           </TabPanel>
-        </Tabs>
-      
-      </div>
-        <div className="flex-column">
-            {findTableData && findTableData[0] && 
-              <div className="table-wrapper">
-                <h3 className="h3-table">Note found</h3>
-                <table className="st-table">            
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Title</th>
-                            <th>Content</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                      <tr key={findTableData[0].id}>
-                          <td>{findTableData[0].id}</td>
-                          <td>{findTableData[0].title}</td>
-                          <td>{findTableData[0].content}</td>
 
-                      </tr>
-                    </tbody>      
-                </table>
-            </div> 
-            }
-          <NoteTable />
+        </Tabs>
+
+      </div>
+
+      <div className="flex-column">
+        {findTableData && findTableData[0] &&
+          <div className="table-wrapper">
+            <h3 className="h3-table">Note found</h3>
+            <table className="st-table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr key={findTableData[0].id}>
+                      <td>{findTableData[0].id}</td>
+                      <td>{findTableData[0].title}</td>
+                      <td>{findTableData[0].content}</td>
+
+                  </tr>
+                </tbody>
+            </table>
+        </div> }
+        <NoteTable />
       </div>
     </div>
   );
 }
- 
+
 export default NoteCRUD;
