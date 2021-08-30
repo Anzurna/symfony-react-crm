@@ -184,7 +184,7 @@ const UserCRUD = () => {
               />  
               <label>User Password:</label>
               <input 
-                type="text" 
+                type="password" 
                 required 
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

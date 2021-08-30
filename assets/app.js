@@ -14,10 +14,10 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import './styles/app.scss';
 import Navbar from './components/Navbar';
-import NoteTable from './components/NoteTable';
 import UserCRUD from './components/UserCRUD';
 import Footer from './components/Footer';
 import NoteCRUD from './components/NoteCRUD';
+import SignIn from './components/SignIn';
     
 ReactDOM.render(
     <Router>
@@ -28,7 +28,7 @@ ReactDOM.render(
             
                 <Switch>
                     <Route exact path="/">
-                    
+                        <SignIn />
                     </Route>
                     <Route exact path="/administration">
                         <UserCRUD />     
