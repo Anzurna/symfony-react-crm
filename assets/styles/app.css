@@ -74,6 +74,12 @@ a, a:focus, a:active {
   min-width: inherit;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  min-width: inherit;
+}
+
 .st-table {
   table-layout: fixed;
   /* width: 70%; */

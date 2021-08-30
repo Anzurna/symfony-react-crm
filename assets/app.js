@@ -14,7 +14,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import './styles/app.css';
 import Navbar from './components/Navbar';
-import UserTable from './components/UserTable';
 import NoteTable from './components/NoteTable';
 import UserCRUD from './components/UserCRUD';
 import Footer from './components/Footer';
@@ -31,10 +30,7 @@ ReactDOM.render(
                     
                     </Route>
                     <Route exact path="/administration">
-                        <div className="flex-row">
-                            <UserCRUD />
-                            <UserTable />  
-                        </div>
+                        <UserCRUD />                        
                         <NoteTable />
                     </Route>
                     <Route exact path="/notes">

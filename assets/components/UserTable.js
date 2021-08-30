@@ -16,10 +16,13 @@ const UserTable = () => {
     }
 
     useEffect(() => {
+
         fetchAllUsers();
         
+        let refresh_interval = 5000;
+
         let timer1 = setInterval(() =>        
-            fetchAllUsers(), 5000);
+            fetchAllUsers(), refresh_interval);
         
     }, []);
     return (  
