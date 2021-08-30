@@ -1,15 +1,7 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import 'https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap';
 
 /* base styles */
-html, body {
-}
-
-
-
-#root {
-
-}
 
 .app {
     display: flex;
@@ -28,6 +20,7 @@ a, a:focus, a:active {
   text-decoration: none;
   color:inherit;
 }
+
 .navbar {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -35,26 +28,27 @@ a, a:focus, a:active {
   max-width: 1000px;
   min-width: 1000px;
   flex-direction: row;
-  margin: 0 auto;
-  
+  margin: 0 auto; 
   border-bottom: 1px solid #f2f2f2;
+
+   h1 {
+    color: #324acf;
+  }
+  .links {
+    margin-left: auto;
+    
+    text-decoration: none !important;
+  }
+  a {
+    margin-left: 16px;
+    text-decoration: none;
+    padding: 6px;
+  }
+  a:hover {
+    color: #142aa8;
+  }
 }
-.navbar h1 {
-  color: #324acf;
-}
-.navbar .links {
-  margin-left: auto;
-  
-  text-decoration: none !important;
-}
-.navbar a {
-  margin-left: 16px;
-  text-decoration: none;
-  padding: 6px;
-}
-.navbar a:hover {
-  color: #142aa8;
-}
+
 
 .active {
   border-bottom: 2px solid #5767c0;
@@ -88,23 +82,22 @@ a, a:focus, a:active {
   border: 2px solid #324acf;
   border-radius: 5px;
   border-spacing: 0;
-}
 
-.st-table th {
-  text-align: start;
-  letter-spacing: 2px;
-}
+  th {
+    text-align: start;
+    letter-spacing: 2px;
+  }
 
+  td {
+    letter-spacing: 1px;
+    padding: 5px;
+  }
 
-.st-table td {
-  letter-spacing: 1px;
-  padding: 5px;
-}
-
-.st-table thead th {
-  border-bottom: 1px solid #a8aed4;
-  padding: 5px;
-  margin: 5px;
+  thead th {
+    border-bottom: 1px solid #a8aed4;
+    padding: 5px;
+    margin: 5px;
+  }
 }
 
 .h3-table {
@@ -137,39 +130,45 @@ a, a:focus, a:active {
   min-width: 50%;
   text-align: left;
   
+  label {
+    text-align: left;
+    display: block;
+  }
+
+  h3 {
+    color: black;
+    margin-bottom: 20px;
+  }
+
+  input, textarea, select {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  button {
+    background: #324acf;
+    color: #fff;
+    border: 0;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
 }
-.crud label {
-  text-align: left;
-  display: block;
-}
-.crud h3 {
-  color: black;
-  margin-bottom: 20px;
-}
-.crud input, .crud textarea, .crud select {
-  width: 100%;
-  padding: 6px 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  box-sizing: border-box;
-  display: block;
-}
-.crud button {
-  background: #324acf;
-  color: #fff;
-  border: 0;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-}
+
 
 .table-wrapper {
   padding-top: 10px;
+
+  h3 {
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 
-.table-wrapper h3 {
-  padding-top: 10px;
-  margin-bottom: 10px;
-}
+
 
 
