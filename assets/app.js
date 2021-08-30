@@ -18,6 +18,7 @@ import UserCRUD from './components/UserCRUD';
 import Footer from './components/Footer';
 import NoteCRUD from './components/NoteCRUD';
 import SignIn from './components/SignIn';
+import UserPageCRUD from './components/UserPageCRUD';
     
 ReactDOM.render(
     <Router>
@@ -38,7 +39,7 @@ ReactDOM.render(
                         <NoteCRUD /> 
                     </Route>
                     <Route exact path="/user">
-
+                        <UserPageCRUD />
                     </Route>
 
                 </Switch>     

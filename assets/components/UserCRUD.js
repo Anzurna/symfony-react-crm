@@ -296,7 +296,7 @@ const UserCRUD = () => {
         </div> }
 
       <UserTable />
-      
+
     </div>
   </div>
   );
