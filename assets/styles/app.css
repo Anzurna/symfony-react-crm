@@ -1,0 +1,174 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* base styles */
+html, body {
+}
+
+
+
+#root {
+
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  
+}
+
+a, a:focus, a:active {
+  text-decoration: none;
+  color:inherit;
+}
+.navbar {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  max-width: 1000px;
+  min-width: 1000px;
+  flex-direction: row;
+  margin: 0 auto;
+  
+  border-bottom: 1px solid #f2f2f2;
+}
+.navbar h1 {
+  color: #324acf;
+}
+.navbar .links {
+  margin-left: auto;
+  
+  text-decoration: none !important;
+}
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color: #142aa8;
+}
+
+.active {
+  border-bottom: 2px solid #5767c0;
+}
+
+
+.content {
+  flex: 1 0 auto;
+  min-width: 1000px;
+  margin: 0px auto;
+  padding: 20px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  min-width: inherit;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  min-width: inherit;
+}
+
+.st-table {
+  table-layout: fixed;
+  /* width: 70%; */
+  border-collapse: separate;
+  border: 2px solid #324acf;
+  border-radius: 5px;
+  border-spacing: 0;
+}
+
+.st-table th {
+  text-align: start;
+  letter-spacing: 2px;
+}
+
+
+.st-table td {
+  letter-spacing: 1px;
+  padding: 5px;
+}
+
+.st-table thead th {
+  border-bottom: 1px solid #a8aed4;
+  padding: 5px;
+  margin: 5px;
+}
+
+.h3-table {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.footer {
+  display: flex;
+  flex: 0;
+  min-width: 1000px;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 60px; 
+  align-content: center;
+  background-color: #90b8d8;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+}
+
+.footer-content {
+  margin: 0 auto;
+  padding: 20px
+}
+
+.user-crud {
+  padding: 20px;
+  padding-left: 0px;
+  /* max-width: 700px; */
+  min-width: 50%;
+  text-align: left;
+  
+}
+.user-crud label {
+  text-align: left;
+  display: block;
+}
+.user-crud h3 {
+  color: black;
+  margin-bottom: 20px;
+}
+.user-crud input, .user-crud textarea, .user-crud select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.user-crud button {
+  background: #324acf;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.table-wrapper {
+  padding-top: 10px;
+}
+
+.table-wrapper h3 {
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+
