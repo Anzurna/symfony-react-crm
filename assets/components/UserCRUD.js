@@ -30,6 +30,17 @@ const UserCRUD = () => {
     setLogin(login);
   }
 
+  function resetState() {
+    setEmail("");
+    setFirstname("");
+    setLastname("");
+    setLogin("");
+    setPassword("");
+    setNewEmail("");
+    setFindTableData(null);
+    setIsUpdateFormActive(false);
+  }
+
 
   const createUser = (e) => {
     e.preventDefault();
@@ -48,7 +59,7 @@ const UserCRUD = () => {
       if (!response.ok) {
           throw new Error("HTTP status " + response.status);
       }
-      
+      resetState();
     })
   }
 
@@ -86,7 +97,7 @@ const UserCRUD = () => {
       if (!response.ok) {
           throw new Error("HTTP status " + response.status);
       }
-      
+      resetState();
     })
   }
 
@@ -125,13 +136,13 @@ const UserCRUD = () => {
       if (!response.ok) {
           throw new Error("HTTP status " + response.status);
       }
-      
+      resetState();
     })
   }
 
   return (
     <div className="flex-row">
-      <div className="user-crud">
+      <div className="crud">
         <h3>User</h3>
       <Tabs>
         <TabList>
@@ -253,7 +264,7 @@ const UserCRUD = () => {
       
       </div>
         <div className="flex-column">
-            {findTableData && 
+            {findTableData && findTableData[0] && 
               <div className="table-wrapper">
                 <h3 className="h3-table">User found</h3>
                 <table className="st-table">            

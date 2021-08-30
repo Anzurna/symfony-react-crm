@@ -4,16 +4,26 @@ import { useEffect, useState } from "react";
 const NoteTable = () => {
     const [data, setData] = useState(null);
 
-    useEffect(() => {
+    const fetchAllNotes = () => {
         fetch("http://localhost:8000/api/notes")
-        .then(response => {
-            console.log(response)
-            return response.json();
+            .then(response => {
+                console.log(response)
+                return response.json();
+            })
+            .then(data => {
+                setData(data);            
         })
-        .then(data => {
-            setData(data);            
-        })
+    }
 
+    useEffect(() => {
+
+        fetchAllNotes();
+        
+        let refresh_interval = 5000;
+
+        let timer1 = setInterval(() =>        
+            fetchAllNotes(), refresh_interval);
+        
     }, []);
     return (  
             <div className="table-wrapper">

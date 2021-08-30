@@ -64,6 +64,7 @@ a, a:focus, a:active {
 .content {
   flex: 1 0 auto;
   min-width: 1000px;
+  max-width: 1000px;
   margin: 0px auto;
   padding: 20px;
 }
@@ -129,7 +130,7 @@ a, a:focus, a:active {
   padding: 20px
 }
 
-.user-crud {
+.crud {
   padding: 20px;
   padding-left: 0px;
   /* max-width: 700px; */
@@ -137,15 +138,15 @@ a, a:focus, a:active {
   text-align: left;
   
 }
-.user-crud label {
+.crud label {
   text-align: left;
   display: block;
 }
-.user-crud h3 {
+.crud h3 {
   color: black;
   margin-bottom: 20px;
 }
-.user-crud input, .user-crud textarea, .user-crud select {
+.crud input, .crud textarea, .crud select {
   width: 100%;
   padding: 6px 10px;
   margin: 10px 0;
@@ -153,7 +154,7 @@ a, a:focus, a:active {
   box-sizing: border-box;
   display: block;
 }
-.user-crud button {
+.crud button {
   background: #324acf;
   color: #fff;
   border: 0;

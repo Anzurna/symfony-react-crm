@@ -17,6 +17,7 @@ import Navbar from './components/Navbar';
 import NoteTable from './components/NoteTable';
 import UserCRUD from './components/UserCRUD';
 import Footer from './components/Footer';
+import NoteCRUD from './components/NoteCRUD';
     
 ReactDOM.render(
     <Router>
@@ -30,11 +31,11 @@ ReactDOM.render(
                     
                     </Route>
                     <Route exact path="/administration">
-                        <UserCRUD />                        
-                        <NoteTable />
+                        <UserCRUD />     
+                        <NoteCRUD />                     
                     </Route>
                     <Route exact path="/notes">
-                        <NoteTable />
+                        <NoteCRUD /> 
                     </Route>
                     <Route exact path="/user">
 
